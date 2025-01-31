@@ -48,7 +48,7 @@ boundaryField
         type            zeroGradient;
     }
 
-    frontAndBack
+    defaultFaces
     {
         type            empty;
     }

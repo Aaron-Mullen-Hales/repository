@@ -18,6 +18,6 @@ functions
     displacement
     {
         type                solidPointDisplacement;
-        point               (0.45 0.15 -0.15);
+        point               (4 -1 0);
     }
 }
