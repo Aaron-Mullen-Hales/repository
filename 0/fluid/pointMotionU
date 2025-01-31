@@ -44,6 +44,11 @@ boundaryField
         type            slip;
         value           uniform (0 0 0);
     }
+
+    defaultFaces
+    {
+        type            empty;
+    }
     
     /*
     bottom

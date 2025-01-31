@@ -11,22 +11,59 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    object      mechanicalProperties;
+    class       volVectorField;
+    object      D;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-planeStress no;
+dimensions      [0 1 0 0 0 0 0];
 
-mechanical
-(
-    rubber
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    interface
     {
-        type        neoHookeanElastic;
-        rho         rho [1 -3 0 0 0 0 0] 1000;
-        E           E [1 -1 -2 0 0 0 0] 500e6;
-        nu          nu [0 0 0 0 0 0 0] 0.4;
+        type            solidTraction;
+        traction        uniform ( 0 0 0 );
+        pressure        uniform 0;
+        value           uniform (0 0 0);
     }
-);
+    bottom
+    {
+        type            solidTraction;
+        traction        uniform ( 0 0 0 );
+        pressure        uniform 0;
+        value           uniform (0 0 0);
+    }
+
+    defaultFaces
+      {
+	type           empty;
+      }
+
+
+    
+    left
+    {
+       type            fixedDisplacement;
+       value           uniform (0 0 0);
+    }
+
+    right
+    {
+       type            fixedDisplacement;
+       value           uniform (0 0 0);
+    }
+
+
+    /*
+    symmetry
+    {
+       type            solidSymmetry;
+       patchType       symmetry;
+       value           uniform (0 0 0);
+       }*/
+}
 
 // ************************************************************************* //

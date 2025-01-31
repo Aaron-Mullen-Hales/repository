@@ -18,7 +18,9 @@ FoamFile
 
 ddtSchemes
 {
-    default            backward;
+    //default            steadyState;
+    default            Euler;
+    //default            backward;
 }
 
 gradSchemes

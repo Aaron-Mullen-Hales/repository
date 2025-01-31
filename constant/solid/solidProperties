@@ -16,11 +16,32 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-solidModel    nonLinearGeometryUpdatedLagrangian;
+//solidModel    nonLinearGeometryUpdatedLagrangian;
+solidModel    nonLinearGeometryTotalLagrangianTotalDisplacement;
 
-nonLinearGeometryUpdatedLagrangianCoeffs
+"nonLinearGeometryUpdatedLagrangianCoeffs|nonLinearGeometryTotalLagrangianTotalDisplacementCoeffs"
 {
-    nCorrectors    1000;
+    // Solution algorithm
+    solutionAlgorithm implicitSegregated;
+    //solutionAlgorithm PETScSNES;
+    //solutionAlgorithm explicit;
+
+    // PETSc options file used by PETScSNES
+    optionsFile petscOptions.lu;
+    //optionsFile petscOptions.hypre;
+    //optionsFile petscOptions.ilu;
+    //optionsFile petscOptions.seg.hypre;
+
+    // Predict displacement at the start of a time-step
+    predictor yes;
+
+    // Damping to help reach steady state
+    dampingCoeff [0 0 -1 0 0 0 0] 1e-1;
+
+    stabilisation
+    {
+        scaleFactor 1.0;
+    }
 }
 
 
