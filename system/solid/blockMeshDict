@@ -45,11 +45,38 @@ vertices
  
 );
 
+//Finest Mesh
+/*
 blocks
 (
- hex (4 5 1 0 12 13 9 8) (3 3 1) simpleGrading (1 1 1) //B0
- hex (5 6 2 1 13 14 10 9 ) (25 3 1) simpleGrading (1 1 1) // B1
- hex (6 7 3 2 14 15 11 10 ) (3 3 1) simpleGrading (1 1 1) //B1
+ hex (4 5 1 0 12 13 9 8) (16 24 1) simpleGrading (1 1 1) //B0                                                                                                 
+ hex (5 6 2 1 13 14 10 9 ) (280 24 1) simpleGrading (1 1 1) // B1                                                                                             
+ hex (6 7 3 2 14 15 11 10 ) (16 24 1) simpleGrading (1 1 1) //B1                                                                                              
+);
+*/
+
+
+//2nd Mesh /2                                                                                                                                            
+
+/*
+blocks
+(
+ hex (4 5 1 0 12 13 9 8) (4 6 1) simpleGrading (1 1 1) //B0                                                                                                 
+ hex (5 6 2 1 13 14 10 9 ) (70 6 1) simpleGrading (1 1 1) // B1                                                                                             
+ hex (6 7 3 2 14 15 11 10 ) (4 6 1) simpleGrading (1 1 1) //B1                                                                                              
+);
+*/
+
+
+
+//Coarsest Mesh
+
+
+blocks
+(
+ hex (4 5 1 0 12 13 9 8) (2 3 1) simpleGrading (1 1 1) //B0
+ hex (5 6 2 1 13 14 10 9 ) (35 3 1) simpleGrading (1 1 1) // B1
+ hex (6 7 3 2 14 15 11 10 ) (2 3 1) simpleGrading (1 1 1) //B1
 );
 
 edges

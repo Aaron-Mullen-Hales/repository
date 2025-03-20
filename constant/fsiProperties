@@ -54,7 +54,7 @@ fluidSolidInterface    Aitken;
     // Optional: if coupled is set to "no", then the couplingStartTime allows
     // you to enable coupling at a specified time
     // Defaults to 0.0
-    couplingStartTime    30.0;
+    couplingStartTime    10.0;
 
     // Predictors at tjhe start of a new time step
     predictor            yes;
